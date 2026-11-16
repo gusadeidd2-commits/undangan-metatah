@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Undangan Metatah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&family=Birthstone+Bounce:wght@400;500&family=Courgette&family=Mulish:wght@400;600;700&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Ikon & ornamen (dipakai ulang) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-cam" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M4 7h3l2-2.5h6L17 7h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.6" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2 2 8.5V20a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V8.5L12 2zm0 2.3 7.6 4.9L12 13.7 4.4 9.2 12 4.3z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path fill="currentColor" d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M7 4.5v15l12-7.5z"/></symbol>
+    <!-- cabang daun garis emas -->
+    <symbol id="branch" viewBox="0 0 200 220">
+      <g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+        <path d="M6 214C40 160 70 110 120 70S190 14 196 4"/>
+        <path d="M60 150c-30-4-48 6-56 22 22 4 42-4 56-22z"/><path d="M60 150c-16 10-30 8-48 18"/>
+        <path d="M84 118c-6-26-22-38-40-40 0 22 14 36 40 40z"/><path d="M84 118C70 104 60 92 46 80"/>
+        <path d="M108 86c-28-2-44 10-50 26 22 2 40-8 50-26z"/><path d="M108 86C92 96 78 104 62 110"/>
+        <path d="M130 64c-2-26-16-40-34-46-2 22 10 38 34 46z"/><path d="M130 64c-10-16-20-28-32-44"/>
+        <path d="M152 46c-24 0-40 12-44 28 20 0 36-10 44-28z"/>
+        <path d="M172 26c0-20-10-32-24-38-2 18 8 30 24 38z"/>
+        <path d="M128 70c18 2 34-6 44-22-18-4-34 4-44 22z"/>
+        <path d="M96 104c22 6 40 0 52-16-20-6-38 0-52 16z"/>
+        <circle cx="40" cy="190" r="10"/><path d="M34 186c4-4 10-4 12 2s-4 8-8 6"/>
+        <path d="M26 196c-6-14 2-26 14-26s20 12 14 24"/>
+      </g>
+    </symbol>
+    <symbol id="sprig" viewBox="0 0 120 120">
+      <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+        <path d="M110 110C80 80 50 50 14 12"/>
+        <path d="M86 86c-2-20 6-32 20-38 2 18-6 30-20 38z"/>
+        <path d="M86 86c-20 0-32-8-36-22 18-2 30 8 36 22z"/>
+        <path d="M60 60c-2-20 6-32 20-38 2 18-6 30-20 38z"/>
+        <path d="M60 60c-20 0-32-8-36-22 18-2 30 8 36 22z"/>
+        <path d="M36 36c0-16 6-26 18-30 0 14-6 24-18 30z"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ================= COVER ================= -->
+<div class="cover" id="cover">
+  <div class="cover-inner">
+    <div class="orn tl"><svg><use href="#branch"/></svg></div>
+    <div class="orn br"><svg><use href="#branch"/></svg></div>
+    <div class="ph arch" data-slot="cover" data-label="Foto Cover" role="button" tabindex="0"></div>
+    <div class="event" data-text="judulAcara"></div>
+    <div class="to">Kepada Yth. Bpk/Ibu/Saudara/i</div>
+    <div class="guest" id="guest">Nama Tamu</div>
+    <button class="btn btn-open" id="btnOpen" type="button"><svg><use href="#i-mail"/></svg>Buka Undangan</button>
+  </div>
+</div>
+
+<div class="tip hide" id="tip">Ketuk kotak foto mana saja untuk mencoba foto kamu</div>
+
+<main class="app" id="app">
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="ph" data-slot="hero" data-label="Foto Utama (Potret)" role="button" tabindex="0"></div>
+    <div class="hero-title"><span class="k" data-text="jenisAcara"></span><span class="n" data-text="namaPanggilan"></span></div>
+  </section>
+
+  <section class="quote pad">
+    <p>“Dengan mepandes, jadilah lebih dewasa, baik dalam berpikir, berbuat serta berkata-kata. Hilangkan semua sifat-sifat buruk yang ada. Laksanakan petunjuk dan perintah agama dengan sebaik baiknya.”</p>
+    <p>“Dengan Yadnya, semoga kami memperoleh sifat-sifat kemuliaan, kejayaan, kekuatan rohani, kekuatan jasmani, kesejahteraan dan perlindungan”</p>
+    <div class="cite">Yayurweda XV.113</div>
+  </section>
+
+  <!-- ================= SALAM & PROFIL ================= -->
+  <section class="greet pad">
+    <h2>OM SWASTYASTU</h2>
+    <p class="intro">Atas Asung Kertha Wara Nugraha Ida Sang Hyang Widhi Wasa/Tuhan Yang Maha Esa kami bermaksud mengundang Bapak/Ibu/Saudara/i pada Upacara Manusa Yadnya Metatah (Potong Gigi) <span data-text="sebutan"></span> kami.</p>
+    <div class="profile">
+      <div class="orn leaf1"><svg><use href="#sprig"/></svg></div>
+      <div class="ph arch" data-slot="profil" data-label="Foto Profil" role="button" tabindex="0"></div>
+      <div class="orn leaf2"><svg><use href="#sprig"/></svg></div>
+    </div>
+    <h3 class="fullname" data-text="namaLengkap"></h3>
+    <div class="parents">
+      <span data-text="urutanAnak"></span><br>
+      <b data-text="namaAyah"></b>&amp;<b data-text="namaIbu"></b>
+    </div>
+  </section>
+
+  <!-- ================= ACARA ================= -->
+  <section class="event-sec pad">
+    <div class="ph" data-slot="acara" data-label="Foto Latar Acara" role="button" tabindex="0"></div>
+    <div class="shade"></div>
+    <div class="event-body">
+      <p class="ask">Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila Bapak/Ibu/Saudara/i, berkenan hadir untuk memberikan doa restu.</p>
+      <h2 data-text="namaSesi"></h2>
+      <div class="date"><span data-text="hariTanggal"></span><br>PUKUL : <span data-text="jam"></span></div>
+      <div class="place" data-text="alamat"></div>
+      <div class="countdown" aria-label="Hitung mundur acara">
+        <div><b id="cd-d">00</b><span>DAYS</span></div>
+        <div><b id="cd-h">00</b><span>HOURS</span></div>
+        <div><b id="cd-m">00</b><span>MINUTES</span></div>
+        <div><b id="cd-s">00</b><span>SECONDS</span></div>
+      </div>
+      <a class="btn btn-maps" id="maps" href="#" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg>LIHAT MAPS</a>
+      <p class="thanks">Atas kehadiran dan doa restunya<br>kami ucapkan terimakasih</p>
+      <p class="shanti">Om Shanti Shanti Shanti Om</p>
+    </div>
+  </section>
+
+  <!-- ================= GALERI ================= -->
+  <section class="gallery pad">
+    <h2>GALERI PHOTO</h2>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <!-- ================= UCAPAN ================= -->
+  <section class="wishes pad">
+    <h2>KIRIM UCAPAN</h2>
+    <form id="wishForm" novalidate>
+      <div class="field"><label for="w-name">Nama</label><input id="w-name" maxlength="60" placeholder="Nama kamu" required></div>
+      <div class="field"><label for="w-msg">Pesan</label><textarea id="w-msg" maxlength="500" placeholder="Tulis ucapan dan doa" required></textarea></div>
+      <div class="field"><label for="w-att">Konfirmasi Kehadiran</label>
+        <select id="w-att" required><option value="">Konfirmasi Kehadiran</option><option>Hadir</option><option>Akan Hadir</option><option>Tidak Hadir</option></select></div>
+      <button class="btn btn-send" type="submit">Kirimkan Ucapan</button>
+      <div class="msg-status" id="wishStatus" aria-live="polite"></div>
+    </form>
+    <div class="wish-list" id="wishList"></div>
+  </section>
+
+  <!-- ================= PENUTUP ================= -->
+  <section class="closing">
+    <div class="ph" data-slot="penutup" data-label="Foto Penutup" role="button" tabindex="0"></div>
+    <div class="closing-body pad">
+      <h2>Matur Suksma</h2>
+      <p>Terima kasih atas ucapan, doa, dan kesediaannya untuk datang di acara metatah kami.</p>
+      <div class="credit"><span data-text="vendor"></span><br><span data-text="kontakVendor"></span></div>
+    </div>
+  </section>
+</main>
+
+<button class="music" id="music" type="button" aria-label="Putar atau jeda musik" hidden><svg><use href="#i-pause"/></svg></button>
+<input type="file" id="picker" accept="image/*" hidden>
+<audio id="audio" loop preload="none"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>

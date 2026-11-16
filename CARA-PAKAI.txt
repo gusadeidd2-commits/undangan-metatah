@@ -1,0 +1,52 @@
+UNDANGAN METATAH - CARA PAKAI
+=============================
+
+Isi folder
+----------
+index.html   Struktur halaman undangan
+style.css    Tampilan (warna, huruf, ukuran, layout HP dan PC)
+script.js    Isi undangan (CONFIG), hitung mundur, musik, ucapan, nama tamu
+foto/        Taruh semua foto di sini
+musik/       Taruh file lagu (.mp3) di sini
+
+1. Masukkan foto
+----------------
+Salin foto ke folder "foto", misalnya:
+  foto/cover.jpg, foto/hero.jpg, foto/profil.jpg, foto/acara.jpg, foto/penutup.jpg,
+  foto/galeri-01.jpg, foto/galeri-02.jpg, ... foto/galeri-40.jpg
+
+Lalu buka script.js, cari bagian CONFIG -> foto, dan isi alamatnya:
+  cover:"foto/cover.jpg", hero:"foto/hero.jpg", ...
+  galeri:[ "foto/galeri-01.jpg", "foto/galeri-02.jpg", ... ]
+
+Kotak galeri yang dibiarkan "" akan tampil sebagai kotak kosong.
+Hapus tanda "" yang tidak dipakai supaya galeri tidak ada kotak kosong.
+
+2. Isi data acara
+-----------------
+Masih di CONFIG (script.js): ganti nama, nama orang tua, tanggal, jam,
+alamat, linkMaps, vendor, dan waktuAcara (untuk hitung mundur).
+
+3. Musik
+--------
+Taruh lagu di folder musik, lalu isi:  musik: "musik/lagu.mp3"
+
+4. Mode tamu
+------------
+modeTamu: true   -> foto tidak bisa diklik/diganti (untuk dikirim ke tamu)
+modeTamu: false  -> bisa klik foto untuk mencoba foto lain (hanya untuk kamu)
+
+5. Link untuk tamu
+------------------
+Setelah website di-upload ke hosting (misalnya Netlify, Vercel, GitHub Pages),
+tambahkan nama tamu di ujung link, sama seperti website aslinya:
+  https://alamat-website-kamu/?to=Bapak+Made+Sudarma
+  https://alamat-website-kamu/?to=Jyesta+dan+mb.santi
+
+Catatan
+-------
+- Ucapan tamu di bagian "Kirim Ucapan" hanya tersimpan di HP/laptop tamu
+  masing-masing. Agar semua tamu bisa saling melihat ucapan, perlu database
+  (misalnya Google Sheets atau Firebase).
+- Buka index.html langsung di browser juga bisa untuk mencoba, tapi musik
+  kadang baru jalan setelah di-upload ke hosting.
